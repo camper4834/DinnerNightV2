@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_recipes"
+        android:icon="@drawable/ic_recipes_black_24dp"
+        android:title="@string/title_recipes" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_calendar_black_24dp"
+        android:title="@string/title_calendar" />
+
+    <item
+        android:id="@+id/navigation_groceries"
+        android:icon="@drawable/ic_groceries_black_24dp"
+        android:title="@string/title_groceries" />
+
+    <item
+        android:id="@+id/navigation_alarms"
+        android:icon="@drawable/ic_alarms_black_24dp"
+        android:title="@string/title_alarms" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/title_settings" />
+
+</menu>
