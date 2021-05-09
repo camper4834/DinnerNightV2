@@ -9,7 +9,7 @@ public class Recipe {
     @PrimaryKey
     public int id;
 
-    public String image_ids;
+    public String image_id;
 
     public String name;
 
