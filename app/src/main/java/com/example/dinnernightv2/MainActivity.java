@@ -47,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         int theme = getThemeFromPreferences();
         setCurrentTheme(theme);
-
-//        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-//                AppDatabase.class, "dinner_night_database").build();
-//        RecipeDao recipeDao = db.recipeDao();
-//        List<Recipe> recipes = recipeDao.getAll();
     }
 
     public void setCurrentTheme(int theme) {
