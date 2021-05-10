@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.dinnernightv2.MainActivity;
 import com.example.dinnernightv2.R;
 import com.example.dinnernightv2.databinding.FragmentCajunBinding;
 import com.example.dinnernightv2.databinding.FragmentRecipesBinding;
@@ -123,6 +124,7 @@ public class CajunFragment extends Fragment {
         binding.calories.setText(Integer.toString(thisRecipe.calories));
         binding.ingredients.setText(thisRecipe.ingredients);
         binding.directions.setText(thisRecipe.directions);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(thisRecipe.name);
         return root;
     }
 

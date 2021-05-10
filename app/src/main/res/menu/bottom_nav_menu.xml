@@ -7,11 +7,6 @@
         android:title="@string/title_recipes" />
 
     <item
-        android:id="@+id/navigation_calendar"
-        android:icon="@drawable/ic_calendar_black_24dp"
-        android:title="@string/title_calendar" />
-
-    <item
         android:id="@+id/navigation_groceries"
         android:icon="@drawable/ic_groceries_black_24dp"
         android:title="@string/title_groceries" />

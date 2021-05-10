@@ -54,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
         setCurrentTheme(theme);
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        return navController.navigateUp()
+                || super.onSupportNavigateUp();
+    }
+
     public void setCurrentTheme(int theme) {
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
