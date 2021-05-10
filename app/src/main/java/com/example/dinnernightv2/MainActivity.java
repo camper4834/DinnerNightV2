@@ -4,17 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.dinnernightv2.room.AppDatabase;
 import com.example.dinnernightv2.room.Recipe;
 import com.example.dinnernightv2.room.RecipeDao;
+import com.example.dinnernightv2.ui.recipes.items.CajunFragment;
 import com.facebook.stetho.Stetho;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.navigation.ActivityNavigator;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.FragmentNavigator;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.room.Room;
@@ -26,6 +30,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_recipes, R.id.navigation_calendar, R.id.navigation_groceries, R.id.navigation_alarms, R.id.navigation_settings)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
@@ -65,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
 
     public int getCurrentTheme() {
         return AppCompatDelegate.getDefaultNightMode();
+    }
+
+    public void startFullRecipe(View view) {
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",0);
+        navController.navigate(R.id.cajunFragment, bundle);
     }
 
 }

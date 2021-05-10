@@ -9,7 +9,14 @@
         android:id="@+id/navigation_recipes"
         android:name="com.example.dinnernightv2.ui.recipes.RecipesFragment"
         android:label="@string/title_recipes"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_navigation_recipes_to_cajunFragment"
+            app:destination="@id/cajunFragment" />
+        <action
+            android:id="@+id/action_navigation_recipes_to_navigation_calendar"
+            app:destination="@id/navigation_calendar" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_calendar"
@@ -34,5 +41,10 @@
         android:name="com.example.dinnernightv2.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/cajunFragment"
+        android:name="com.example.dinnernightv2.ui.recipes.items.CajunFragment"
+        android:label="fragment_cajun"
+        tools:layout="@layout/fragment_cajun" />
 
 </navigation>
