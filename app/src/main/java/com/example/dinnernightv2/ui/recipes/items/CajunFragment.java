@@ -69,10 +69,39 @@ public class CajunFragment extends Fragment {
                 "• 1 stick butter\n" +
                 "• 12 pepperoncini peppers";
         mississippi.directions = "Throw everything into the crockpot and cook on low for 6-8 hours.";
-
+        Recipe salisbury = new Recipe();
+        salisbury.id = 2;
+        salisbury.image_id = R.drawable.salisbury_steak;
+        salisbury.name = "Salisbury Steak";
+        salisbury.cook_time_unit = "3 Hours";
+        salisbury.servings = 4;
+        salisbury.calories = 400;
+        salisbury.ingredients = "• 1 ½ lb ground beef\n" +
+                "• 1 egg\n" +
+                "• ½ cup bread crumbs\n" +
+                "• 1 pack onion soup mix\n" +
+                "• 1 can golden mushroom soup, undiluted";
+        salisbury.directions = "1. Combine beef, egg, bread crumbs, and dry onion soup mix in large bowl. Form mixture evenly into four 1-inch thick patties\n" +
+                "2. Heat large skillet over medium-high heat and cook patties 2 minutes each side until lightly browned\n" +
+                "3. Remove patties from skillet and place in crockpot. Cover patties with mushroom soup and cook on low for 3 to 3 ½ hours.";
+        Recipe pato = new Recipe();
+        pato.id = 3;
+        pato.image_id = R.drawable.chicken_el_pato;
+        pato.name = "Chicken El Pato";
+        pato.cook_time_unit = "6 Hours";
+        pato.servings = 4;
+        pato.calories = 400;
+        pato.ingredients = "• 1 ½ lb boneless chicken breast\n" +
+                "• 2 cans (15 oz) El Pato sauce\n" +
+                "• 2 cups mexican blend cheese";
+        pato.directions = "1. Cut chicken breasts in half. Do not cut them any smaller than that as you want big chunks to shred later.\n" +
+                "2. Put the chicken and the el pato sauce in the crockpot and cook on low for 4-6 hours or on high for 3-5 hours.\n" +
+                "3. 30 minutes before serving sprinkle the cheese on top and cook for the additional 30 minutes.";
         badRecipeList = new ArrayList<>();
         badRecipeList.add(cajun);
         badRecipeList.add(mississippi);
+        badRecipeList.add(salisbury);
+        badRecipeList.add(pato);
     }
 
 
@@ -86,7 +115,7 @@ public class CajunFragment extends Fragment {
         Bundle bundle = getArguments();
         navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main);
         int id = bundle.getInt("id");
-        Recipe thisRecipe = badRecipeList.get(1);
+        Recipe thisRecipe = badRecipeList.get(id);
         binding.mainImage.setImageResource(thisRecipe.image_id);
         binding.recipeName.setText(thisRecipe.name);
         binding.cookTime.setText(thisRecipe.cook_time_unit);

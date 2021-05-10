@@ -72,10 +72,27 @@ public class MainActivity extends AppCompatActivity {
         return AppCompatDelegate.getDefaultNightMode();
     }
 
-    public void startFullRecipe(View view) {
-
+    public void startCajunRecipe(View view) {
         Bundle bundle = new Bundle();
         bundle.putInt("id",0);
+        navController.navigate(R.id.cajunFragment, bundle);
+    }
+
+    public void startMississippiRecipe(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",1);
+        navController.navigate(R.id.cajunFragment, bundle);
+    }
+
+    public void startSalisburyRecipe(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",2);
+        navController.navigate(R.id.cajunFragment, bundle);
+    }
+
+    public void startPatoRecipe(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",3);
         navController.navigate(R.id.cajunFragment, bundle);
     }
 
